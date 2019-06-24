@@ -1,7 +1,17 @@
 Запустить проект
+
+### `npm install`
+Установит все зависимости
 ### `npm start`
+Запуск
 
 Открыть [http://localhost:3000](http://localhost:3000) 
+
+что поставил смотрите в package.json<br>
+"@material-ui/core": "^4.1.2",  ui библитека<br>
+    "prop-types": "^15.7.2",    для проверки пропсов которые будем передавть<br>
+    "react-redux": "^7.1.0",    сам редакс <br>
+    "redux-logger": "^3.0.6"    вывод в консоль экшинов<br>
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.

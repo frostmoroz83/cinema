@@ -1,0 +1,57 @@
+[
+  {
+    "id": 0,
+    "title": "Финист – ясный сокол",
+    "description": "Андрей Рубанов",
+    "image":
+    "https://s2eu1.kinoplan24.ru/17/4871f07603fe/5360.jpg?mode=fit&width=512&height=512",
+    "price": 710,
+    "rating": 3
+  },
+  {
+    "id": 1,
+    "title": "1984",
+    "description": "Джордж Оруэлл",
+    "image":
+    "https://s2eu1.kinoplan24.ru/18/3f8e96884d79/12415.jpg?mode=fit&width=512&height=512",
+    "price": 415,
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "title": "Девушка в тумане",
+    "description": "Донато Карризи",
+    "image":
+    "https://s1eu1.kinoplan24.ru/20/37875c37e134/9362.jpg?mode=fit&width=512&height=512",
+    "price": 464,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "title": "Империя должна умереть",
+    "description": "Михаил Зыгарь",
+    "image":
+    "https://s2eu1.kinoplan24.ru/15/3f4123032caf/5106.jpg?mode=fit&width=512&height=512",
+    "price": 741,
+    "rating": 3
+  },
+  {
+    "id": 4,
+    "title": "Земное притяжение",
+    "description": "Татьяна Устинова",
+    "image":
+    "https://s1eu1.kinoplan24.ru/18/3ef59262831a/8119.jpg?mode=fit&width=512&height=512",
+    "price": 317,
+    "rating": 1
+  },
+  {
+    "id": 5,
+    "title": "Ма",
+    "description": "Гузель Яхина",
+    "image":
+    "https://s1eu1.kinoplan24.ru/18/3e167461290c/10885.jpg?mode=fit&width=512&height=512",
+    "price": 254,
+    "rating": 0
+  }
+
+]

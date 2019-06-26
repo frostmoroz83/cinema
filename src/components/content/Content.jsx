@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios/index';
-import './App.css';
-import PostCard from "./PostCard";
+import PostCard from "../films/PostCard";
 
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
@@ -22,9 +21,9 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-class App extends Component {
+class Content extends Component {
     componentWillMount() {
-        console.log(`Это пропсы `, this.props)
+        console.log(`Это пропсы `, this.props);
         const { setPoster } = this.props;
         axios.get('/db.json').then(({data}) => {
             setPoster(data);
@@ -52,4 +51,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Content;

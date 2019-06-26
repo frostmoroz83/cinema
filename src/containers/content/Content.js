@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as booksAction from '../action/books';
-import {setPoster} from '../actions/poster';
-import App from '../components/App';
+import {setPoster} from '../../actions/poster';
+import Content from '../../components/content/Content';
 
 
 const mapStateToProps = ({poster}) => ({
@@ -17,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
     },
 
 });
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

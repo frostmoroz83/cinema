@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper/index';
+import Grid from '@material-ui/core/Grid/index';
 
 const PostCard = ( poster, useStyles) => {
     const { image, title  } = poster;

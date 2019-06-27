@@ -2,24 +2,17 @@ import React, {Component} from 'react';
 import axios from 'axios/index';
 import PostCard from "../films/PostCard";
 
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import {makeStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles(theme => ({
+
+const useStyles = makeStyles({
     root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        overflow: 'hidden',
-        backgroundColor: theme.palette.background.paper,
+
+        padding: '0 30px',
     },
-    gridList: {
-        width: 500,
-        height: 450,
-    },
-}));
+});
+
 // возвращает cookie с именем name, если есть, если нет, то undefined
 function getCookie(name) {
     let matches = document.cookie.match(new RegExp(
@@ -28,11 +21,10 @@ function getCookie(name) {
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-
 class Content extends Component {
     componentWillMount() {
 
-        const { setPoster } = this.props;
+        const {setPoster} = this.props;
 
         axios.get('/db.json').then(({data}) => {
             const date = new Date(new Date(Date.now() + 7 * 86400000).toGMTString());
@@ -46,20 +38,25 @@ class Content extends Component {
     render() {
         // const classes = useStyles();
         const {poster, isReady} = this.props;
-        // console.log(useStyles);
         return (
-            <Container>
-                <div className={useStyles.root}>
-                    <Grid container spacing={3}>
-                        {
-                            !isReady ? 'Загрузка...'
-                                : poster.map((poster, i) => (
-                                    <PostCard useStyles={useStyles.gridList} key={i} {...poster}/>
-                                ))
-                        }
-                    </Grid>
-                </div>
-            </Container>
+
+            <Grid container
+                  direction="row"
+                  justify="flex-start"
+                  alignItems="flex-start"
+                  // className={classes.root}
+                  spacing={2}
+            >
+                {
+                    !isReady ? 'Загрузка...'
+                        : poster.map((poster, i) => (
+                            <Grid item xs={6} sm={3}>
+                                <PostCard key={i} {...poster}/>
+                            </Grid>
+                        ))
+                }
+            </Grid>
+
         );
     }
 }

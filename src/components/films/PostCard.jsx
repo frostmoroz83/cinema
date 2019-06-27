@@ -1,16 +1,35 @@
 import React from 'react';
 
-import Paper from '@material-ui/core/Paper/index';
-import Grid from '@material-ui/core/Grid/index';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
-const PostCard = ( poster, useStyles) => {
+const useStyles = makeStyles({
+    card: {
+        maxWidth: 360,
+    },
+    media: {
+        height: 512,
+    },
+});
+
+const PostCard = ( poster ) => {
     const { image, title  } = poster;
-
+    const classes = useStyles();
     return (
-        <Grid item xs={4}>
-            <Paper className={useStyles}> <img src={image} alt={title}/></Paper>
-        </Grid>
-
+            <CardActionArea>
+                <CardMedia
+                    className={classes.media}
+                    image={image}
+                    title={title}
+                />
+            </CardActionArea>
     );
 };
 

@@ -17,12 +17,27 @@ const myFilm = {
 };
 
 class HallDA extends Component {
-    render() {
-        function onToBook(e) {
-            const elem = e.currentTarget.id;
+    state = {
+        time: '1 июля в 16:00',
+        hall: 'Зал DOLBY ATMOS',
+        place: {
+            price: 250,
+            number_place: '',
+        },
+        sum: 0,
+    }
+     onToBook = (e) => {
+        const elem = e.currentTarget.id;
 
-            console.log(elem);
-        }
+        this.setState({
+                          place: {
+                              number_place: elem
+                          },
+                  })
+
+        console.log(this.state);
+    }
+    render() {
 
         const [film] = myFilm.films;
 
@@ -41,8 +56,8 @@ class HallDA extends Component {
                                     <div className="row">
                                         <div className="col s10">
                                             <div className="center-align">
-                                                <span>30 июня в 16:00,</span>
-                                                <span>Зал DOLBY ATMOS</span>
+                                                <span>{this.state.time},</span>
+                                                <span>{this.state.hall}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +72,7 @@ class HallDA extends Component {
                                             <div className="hall-legend">
                                                 <div className="hall-legend__item">
                                                     <span className="hall-legend__color"></span>
-                                                    <span>250р</span>
+                                                    <span>{this.state.place.price}р</span>
                                                 </div>
                                                 <div className="hall-legend__item">
                                                     <span
@@ -87,133 +102,126 @@ class HallDA extends Component {
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat"  style={{left: "0px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_1" className="hall-schema-seat__place" onClick={onToBook}>1</div>
+                                                                    <div id="1_1" className="hall-schema-seat__place" onClick={this.onToBook}>1</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "50px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_2" className="hall-schema-seat__place" onClick={onToBook}>2</div>
+                                                                    <div id="1_2" className="hall-schema-seat__place" onClick={this.onToBook}>2</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "100px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_3" className="hall-schema-seat__place" onClick={onToBook}>3</div>
+                                                                    <div id="1_3" className="hall-schema-seat__place" onClick={this.onToBook}>3</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "150px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_4" className="hall-schema-seat__place" onClick={onToBook}>4</div>
+                                                                    <div id="1_4" className="hall-schema-seat__place" onClick={this.onToBook}>4</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "200px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_5" className="hall-schema-seat__place" onClick={onToBook}>5</div>
+                                                                    <div id="1_5" className="hall-schema-seat__place" onClick={this.onToBook}>5</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "250px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_6" className="hall-schema-seat__place" onClick={onToBook}>6</div>
+                                                                    <div id="1_6" className="hall-schema-seat__place" onClick={this.onToBook}>6</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "300px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_7" className="hall-schema-seat__place" onClick={onToBook}>7</div>
+                                                                    <div id="1_7" className="hall-schema-seat__place" onClick={this.onToBook}>7</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "350px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_8" className="hall-schema-seat__place" onClick={onToBook}>8</div>
+                                                                    <div id="1_8" className="hall-schema-seat__place" onClick={this.onToBook}>8</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "400px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_9" className="hall-schema-seat__place" onClick={onToBook}>9</div>
+                                                                    <div id="1_9" className="hall-schema-seat__place" onClick={this.onToBook}>9</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "450px", top: "0px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="1_10" className="hall-schema-seat__place" onClick={onToBook}>10</div>
+                                                                    <div id="1_10" className="hall-schema-seat__place" onClick={this.onToBook}>10</div>
                                                                 </div>
                                                             </div>
                                                             {/*2 ряд*/}
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "0px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_1" className="hall-schema-seat__place" onClick={onToBook}>1</div>
+                                                                    <div id="2_1" className="hall-schema-seat__place" onClick={this.onToBook}>1</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "50px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_2" className="hall-schema-seat__place" onClick={onToBook}>2</div>
+                                                                    <div id="2_2" className="hall-schema-seat__place" onClick={this.onToBook}>2</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "100px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_3" className="hall-schema-seat__place" onClick={onToBook}>3</div>
+                                                                    <div id="2_3" className="hall-schema-seat__place" onClick={this.onToBook}>3</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "150px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_4" className="hall-schema-seat__place" onClick={onToBook}>4</div>
+                                                                    <div id="2_4" className="hall-schema-seat__place" onClick={this.onToBook}>4</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "200px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_5" className="hall-schema-seat__place" onClick={onToBook}>5</div>
+                                                                    <div id="2_5" className="hall-schema-seat__place" onClick={this.onToBook}>5</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "250px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_6" className="hall-schema-seat__place" onClick={onToBook}>6</div>
+                                                                    <div id="2_6" className="hall-schema-seat__place" onClick={this.onToBook}>6</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "300px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_7" className="hall-schema-seat__place" onClick={onToBook}>7</div>
+                                                                    <div id="2_7" className="hall-schema-seat__place" onClick={this.onToBook}>7</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "350px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_8" className="hall-schema-seat__place" onClick={onToBook}>8</div>
+                                                                    <div id="2_8" className="hall-schema-seat__place" onClick={this.onToBook}>8</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "400px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_9" className="hall-schema-seat__place" onClick={onToBook}>9</div>
+                                                                    <div id="2_9" className="hall-schema-seat__place" onClick={this.onToBook}>9</div>
                                                                 </div>
                                                             </div>
                                                             <div className="">
                                                                 <div
                                                                     className="hall-schema-seat__tooltip hall-schema-seat" style={{left: "450px", top: "50px", height: "36px", width: "36px", backgroundColor: "rgb(164, 206, 54)", zIndex: "9"}}>
-                                                                    <div id="2_10" className="hall-schema-seat__place" onClick={onToBook}>10</div>
+                                                                    <div id="2_10" className="hall-schema-seat__place" onClick={this.onToBook}>10</div>
                                                                 </div>
                                                             </div>
-
-
-
-
-
-
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -229,7 +237,7 @@ class HallDA extends Component {
                                             <div className="hall-schema__sum">
                                                 <div className="hall-schema__sum-final">
                                                     <span>Итого: &nbsp;</span>
-                                                    <span>250р</span>
+                                                    <span>{this.state.sum}р</span>
                                                 </div>
                                             </div>
                                             <a className="waves-effect waves-light btn">Забронировать место</a>

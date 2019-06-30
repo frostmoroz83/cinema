@@ -1,0 +1,9 @@
+.wrapper{
+   display: flex;
+}
+.wrapper div{
+    border: 1px solid red;
+    margin-left: 50px;
+    justify-content: center;
+    
+}

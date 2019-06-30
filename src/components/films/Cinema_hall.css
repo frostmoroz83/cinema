@@ -1,0 +1,17 @@
+.cinema_hall .section {
+    display: flex;
+    justify-content: center;
+
+}
+
+.place {
+    width: 15px;
+    height: 15px;
+    background: deepskyblue;
+    margin: 10px;
+    cursor: pointer;
+}
+.place:hover {
+    background: darkgreen;
+}
+
